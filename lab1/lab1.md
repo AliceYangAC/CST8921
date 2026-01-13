@@ -43,6 +43,10 @@ I followed the Microsoft Learn tutorial [1] to build the example model for predi
 
 Above shows the details for each complete job run per component in our pipeline. Most interestingly is the results when the model was evaluated by the job `evaluate_model`; Coefficient of Determination: 0.868, Relative Squared Error: 0.132, Mean Absolute Error: 1773.627, Root Mean Squared Error: 2461.696, Relative Absolute Error: 0.389. Each job allows us to view the various output and inputs for the job, its duration, and other details important to track when constructing a pipeline.
 
+## Delete Resources
+
+![alt text](image-25.png)
+
 ## References
 
 [1]
