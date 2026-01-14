@@ -5,7 +5,7 @@
 ## Deploy Azure ML
 
 ![alt text](image.png)
-I first the Azure Machine Learning workspace with the names for the RG and workspace as described in the lab. Afterwards, I deployed the resource
+I first configured the Azure Machine Learning workspace with the names for the RG `aml-lab-rg` and workspace `aml-lab-workspace` in Canada Central as described in the lab instructions. Afterwards, I deployed the resource to be able to navigate the studio.
 
 ## Azure ML Studio Overview
 
