@@ -3,7 +3,7 @@
 ## Alice Yang 041200019
 
 
-## Task 1: Azure Policy - AlloId Locations
+## Task 1: Azure Policy - Allowed Locations
 
 ![alt text](images/image.png)
 ![alt text](images/image-1.png)
