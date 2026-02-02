@@ -1,5 +1,7 @@
 # Lab 4: Azure Databricks and analyzing files with Databricks
 
+Alice Yang 041200019 CST8921
+
 ## Task 1: Upload Data to Azure Data Lake
 
 ![alt text](images/image.png)
@@ -47,6 +49,39 @@
 ![alt text](images/image-21.png)
 ![alt text](images/image-22.png)
 
+```SQL
+CREATE DATABASE cst8921;
+
+USE cst8921;
+
+CREATE EXTERNAL DATA SOURCE MyDataLake
+WITH (
+    LOCATION = 'https://cst8921storage.dfs.core.windows.net'
+);
+
+CREATE EXTERNAL FILE FORMAT ParquetFormat
+WITH (
+    FORMAT_TYPE = PARQUET
+);
+
+CREATE EXTERNAL TABLE refined_events
+WITH (
+    LOCATION = 'refined/events_table/',
+    DATA_SOURCE = MyDataLake,
+    FILE_FORMAT = ParquetFormat
+)
+AS
+SELECT *
+FROM OPENROWSET(
+    BULK 'https://cst8921storage.dfs.core.windows.net/refined/events/*.parquet',
+    FORMAT = 'PARQUET'
+) AS data;
+```
+
 ## Task 9: Analyze & Visualize Data
 
 ![alt text](images/image-23.png)
+
+## Task 9: Delete Resources
+
+![alt text](images/image-24.png)
