@@ -1,8 +1,8 @@
 using Microsoft.Azure.Cosmos;
 using static Microsoft.Azure.Cosmos.Container;
 
-string endpoint = "https://cst8921-lab3.documents.azure.com:443/";
-string key = "M1YG73SrTYut4wIkxYVZuAYVS8XcsLFD58cec8ngNJFjksnzmWMgfpvJBfrRnUAGxYRiOltbowBwACDbFSaF4w==";
+string endpoint = "https://<your-cosmos-account>.documents.azure.com:443/";
+string key = "<your-cosmos-key>";
 
 CosmosClient client = new CosmosClient(endpoint, key);
 
