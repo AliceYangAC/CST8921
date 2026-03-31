@@ -3,3 +3,4 @@
 *.tf
 *.tfstate
 *.tfstate.backup
+.env
