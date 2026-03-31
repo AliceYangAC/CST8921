@@ -4,8 +4,8 @@ import time
 from datetime import datetime, timezone
 from azure.eventhub import EventHubProducerClient, EventData
 
-# Paste your Event Hub connection string here
-CONNECTION_STRING = "Endpoint=sb://hubdatamigration-ay-17.servicebus.windows.net/;SharedAccessKeyName=RootManageSharedAccessKey;SharedAccessKey=wiOtnNEUMA4chrIfjQAqWyj8VeZ9pWudV+AEhMC8U/A="
+# event hub conn string here
+CONNECTION_STRING = "Endpoint=sb://..."
 EVENTHUB_NAME = "turbine-telemetry"
 
 DEVICE_IDS = ["Turbine001", "Turbine002", "Turbine003"]
@@ -31,8 +31,7 @@ def generate_telemetry(device_id):
     }
 
 def main():
-    print("Starting Wind Turbine Data Generator...")
-    print("Sending telemetry every 5 seconds. Press Ctrl+C to stop.\n")
+    print("starting the generator...")
 
     producer = EventHubProducerClient.from_connection_string(
         conn_str=CONNECTION_STRING,
@@ -56,7 +55,7 @@ def main():
 
                 producer.send_batch(event_data_batch)
             
-            print("--- Batch sent ---\n")
+            print("--- batch sent ---\n")
             time.sleep(5)  # wait 5 seconds between batches
 
             # Re-create producer for next batch
